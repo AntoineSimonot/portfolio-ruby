@@ -1872,7 +1872,7 @@ cocoon-js@^0.0.5:
   dependencies:
     jquery "^3.2.1"
 
-cocoon@^1.2.10:
+cocoon@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/cocoon/-/cocoon-0.1.1.tgz#e917ec7689b26cde3d567e815bda35a16172ed6e"
   integrity sha1-6RfsdomybN49Vn6BW9o1oWFy7W4=
