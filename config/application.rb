@@ -21,7 +21,7 @@ module DevcampPortfolio
   class Application < Rails::Application
     config.eager_load_paths << Rails.root.join('lib') 
     config.generators.javascript_engine = :js 
-
+    config.assets.initialize_on_precompile = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     # Configuration for the application, engines, and railties goes here.
