@@ -29,12 +29,12 @@
   "engines": {
     "node": "16.4.0"
   },
+
   "scripts": {
     "start": "node index.js"
   },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
-  },
-  
+  }
 }
