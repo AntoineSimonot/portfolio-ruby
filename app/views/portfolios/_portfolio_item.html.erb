@@ -1,0 +1,20 @@
+
+<div class="col-md-4">
+  <div class="card mb-4 box-shadow">
+      <%= image_tag portfolio_img(portfolio_item.thumb_image.url, "thumb"), width: "100%" unless portfolio_item.thumb_image.nil? %>
+        <div class="card-body">
+          <p class="card-text"><%= portfolio_item.title %><p>
+            <p class="card-text"><%= portfolio_item.body %><p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <%= link_to 'Show', portfolio_show_path(portfolio_item), class: "btn btn-primary" %>  
+                <%= link_to 'Edit', edit_portfolio_path(portfolio_item.id), class: "btn btn-primary" if logged_in?(:site_admin)%>  
+                <%= link_to 'Delete', portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" if logged_in?(:site_admin)%>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,17 @@
+<div class="blogHead">
+      <h1 class="">My blog</h1>
+      <p class="">You can find here all the blogs..</p>
+      <% if logged_in?(:site_admin) %>
+        <span>
+        <%= link_to "New Blog", new_blog_path%>
+        </span>
+        <span>
+        
+          <% if current_page?(blogs_path) %>
+              <%= link_to "Topics", topics_path %>
+          <% else %>
+              <%= link_to "Blogs", blogs_path %>
+          <% end %>
+        </span>
+      <% end %>
+    </div>

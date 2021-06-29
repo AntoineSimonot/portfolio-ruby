@@ -1,3 +1,329 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+@import "font-awesome";
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+/* stylelint-disable selector-list-comma-newline-after */
+
+.blog-header {
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .blog-header-logo {
+    font-size: 2.25rem;
+  }
+  
+  .blog-header-logo:hover {
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;  
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    .display-4 {
+      font-size: 3rem;
+    }
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+    max-width: 720px;
+    margin: 0 auto;
+    max-width: 1320px;
+    padding-left: 12px;
+  }
+  
+  .nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: left;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    justify-content: left !important;
+  }
+  
+  .nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+  }
+  
+  .card-img-right {
+    height: 100%;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .flex-auto {
+    -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+  }
+  
+  .h-250 { height: 250px; }
+  @media (min-width: 768px) {
+    .h-md-250 { height: 250px; }
+  }
+  
+  .border-top { border-top: 1px solid #e5e5e5; }
+  .border-bottom { border-bottom: 1px solid #e5e5e5; }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+  
+  /*
+   * Blog name and description
+   */
+  .blog-title {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  .blog-description {
+    font-size: 1.1rem;
+    color: #999;
+  }
+  
+  @media (min-width: 40em) {
+    .blog-title {
+      font-size: 3.5rem;
+    }
+  }
+  
+  /* Pagination */
+  .blog-pagination {
+    margin-bottom: 4rem;
+  }
+  .blog-pagination > .btn {
+    border-radius: 2rem;
+  }
+  
+  /*
+   * Blog posts
+   */
+  .blog-post {
+    margin-bottom: 4rem;
+  }
+  .blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+
+    a{
+      text-decoration: none;
+    }
+    
+  }
+  .blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+  }
+  
+  /*
+   * Footer
+   */
+  .blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+  }
+
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+  
+
+  .head{
+    padding: 0 !important;
+    margin-bottom: 4rem;
+
+    a{
+      color: #999;
+      font-size: 1rem;
+    }
+  
+  }
+
+  .show{
+    width: auto !important;
+    padding: 20px 0 !important;
+
+    div{
+      padding: 0 !important;
+    }
+
+    aside{
+      padding: 20px 0 !important;
+    }
+  }
+
+  .blogHead{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 20px 0 30px 0;
+  }
+
+  .social a{
+    text-decoration: none !important;
+    color: black !important;
+    font-size: 20px;
+  }
+
+  .custom_gritter {
+    background-color: rgb(22, 27, 22);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+  
+  #gritter-notice-wrapper {
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:301px;
+    z-index:9999;
+    
+    &.top-left {
+      left: 20px;
+      right: auto;
+    }
+    
+    &.bottom-right {
+      top: auto;
+      left: auto;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    &.bottom-left {
+      top: auto;
+      right: auto;
+      bottom: 20px;
+      left: 20px;
+    }
+  }
+  
+  .gritter-item-wrapper {
+    position:relative;
+    margin:0 0 10px 0;
+    background:url(asset-url('ie-spacer.gif')); // ie7/8 fix
+  }
+  
+  .gritter-top {
+    background:url(asset-url('gritter.png')) no-repeat left -30px;
+    height:10px;
+  }
+  .hover .gritter-top {
+    background-position:right -30px;
+  }
+  .gritter-bottom {
+    background:url(asset-url('gritter.png')) no-repeat left bottom;
+    height:8px;
+    margin:0;
+  }
+  .hover .gritter-bottom {
+    background-position: bottom right;
+  }
+  
+  .gritter-item {
+    display:block;
+    color:#eee;
+    padding:2px 11px 8px 11px;
+    font-size: 11px;
+    font-family:verdana;
+    filter:inherit; // ie8 fix
+    
+    &.gritter-css2 {
+      background:url(asset-url('gritter.png')) no-repeat left -40px;
+    }
+    &.gritter-css3 {
+      background:rgba(0, 0, 0, 0.8);
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      padding-top: 12px;
+      padding-bottom: 16px;
+    }
+    
+    p {
+      padding:0;
+      margin:0;
+    }
+  }
+  .hover .gritter-item.gritter-css2 {
+    background-position:right -40px;
+  }
+  .hover .gritter-item.gritter-css3 {
+    padding:10px 9px 14px 9px;
+    border: solid 2px #fff;
+  }
+  
+  .gritter-close {
+    display:none;
+    position:absolute;
+    top:5px;
+    left:3px;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    filter:inherit; // ie8 fix
+  }
+  .gritter-css2 .gritter-close {
+    background:url(asset-url('gritter.png')) no-repeat left top;
+  }
+  .gritter-css3 .gritter-close {
+    background:url(asset-url('gritter-close.png')) no-repeat;
+  }
+  
+  .gritter-title {
+    font-size:14px;
+    font-weight:bold;
+    padding:0 0 7px 0;
+    display:block;
+    text-shadow:1px 1px #000; /* Not supported by IE :( */
+  }
+  .gritter-image {
+    width:48px;
+    height:48px;
+    float:left;
+  }
+  .gritter-with-image,
+  .gritter-without-image {
+    padding:0 0 5px 0;
+  }
+  .gritter-with-image {
+    width:220px;
+    float:right;
+  }
+
+  .blogcrum{
+    font-size: 25px;
+
+    a{
+      margin: 0 10px 0 0;
+    }
+
+  }
+
+  .breadcrumb{
+    background-color: #d2d8e0;
+    padding: 5px 10px;
+  }

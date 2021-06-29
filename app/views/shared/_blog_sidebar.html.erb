@@ -1,0 +1,29 @@
+ <aside class="col-md-4 blog-sidebar">
+    <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
+
+    <div class="p-3 mb-3 bg-light rounded">
+       <%= source_helper("alert alert-info")%>
+    </div>
+
+
+    
+    <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">Topics</h4>
+        <% @sidebar_topics.each do |topic| %>
+            <p> <%= link_to topic.title, topic_path(topic)%> </p>
+        <% end %>
+    </div>
+
+    
+    <div class="p-3 mb-3 bg-light rounded">
+    <h4 class="font-italic">Elsewhere</h4>
+    <ol class="list-unstyled social">
+        <a href=""><li><%= fa_icon "github", text: "Github"%></li></a>
+        <a href=""><li><%= fa_icon "facebook", text: "Facebook"%></li></a>
+        <a href=""><li><%= fa_icon "linkedin", text: "Lindedin"%></li></a>
+    </ol>
+    </div>
+</aside>

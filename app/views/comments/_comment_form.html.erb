@@ -1,0 +1,12 @@
+<% unless current_user.is_a? GuestUser %>
+<%= form_with(model: @comment) do |f|%>
+    <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <%= hidden_field_tag "blog_id", @blog %>
+
+    <%= f.submit 'Post Comment', class: 'btn btn-primary mt-3' %>
+<% end %>
+<% end %>

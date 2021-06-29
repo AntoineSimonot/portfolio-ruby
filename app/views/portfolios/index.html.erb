@@ -1,0 +1,11 @@
+
+ <div class="album py-5 bg-light">
+    <div class="container">
+        <%= source_helper("alert alert-warning")%>
+        <%= link_to "New portfolio item", new_portfolio_path %>
+        <div data-controller="drag" class="row sortable">
+            <%= render partial: "portfolio_item", collection: @portfolio_items%>
+        </div>
+    </div>
+</div>
+

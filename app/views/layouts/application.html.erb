@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title><%= @page_title %></title>
+    <meta name="keywords" content="<%= @seo_keywords %>">
+
+    <%= favicon_link_tag asset_path('favicons/favicon.ico')%>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    
+    <%= video_tag(
+      "video.mp4",
+      id: 'background',
+      autoplay: true,
+      loop:true,
+      muted:true,
+      color: "black"
+    )%>
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+      <%= render './shared/application_nav' %>
+
+      <%= yield %>
+
+      <%= render './shared/footer' %>
+
+      <%= alerts %>
+
+      <%= source_helper("application") %>
+
+    </div>
   </body>
 </html>
