@@ -27,7 +27,7 @@
     "fsevents": "2.1.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.4.0"
   },
   "version": "0.1.0",
   "devDependencies": {
