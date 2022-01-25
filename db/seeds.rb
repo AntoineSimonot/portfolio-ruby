@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 3.times do |topic|
   User.create(
-      email: "test@test.com"
+      email: "test@test.com",
       password: "0208200ASs"
   )
 end
@@ -26,6 +26,7 @@ end
         xcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         topic_id: Topic.find(rand(1..3)).id
     )
+    byebug
 end
     
 5.times do |skill|

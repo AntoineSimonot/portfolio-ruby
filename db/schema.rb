@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_06_25_110024) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -22,15 +19,15 @@ ActiveRecord::Schema.define(version: 2021_06_25_110024) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.integer "status", default: 0
-    t.bigint "topic_id", default: 1
+    t.integer "topic_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
     t.index ["topic_id"], name: "index_blogs_on_topic_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.bigint "user_id", null: false
-    t.bigint "blog_id", null: false
+    t.integer "user_id", null: false
+    t.integer "blog_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id"
@@ -71,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_06_25_110024) do
 
   create_table "technologies", force: :cascade do |t|
     t.string "name"
-    t.bigint "portfolio_id", null: false
+    t.integer "portfolio_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
@@ -86,17 +83,13 @@ ActiveRecord::Schema.define(version: 2021_06_25_110024) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.date "current_sign_in_at"
     t.string "roles"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
